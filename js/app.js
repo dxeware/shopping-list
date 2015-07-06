@@ -8,16 +8,14 @@ $(document).ready(function() {
     $(this).closest('li').remove();
   });
 
+  // Show 'Delete' div on mouseenter
   $ ( '#shopping-list' ).on('mouseenter', '.listitem', function( event ) {
-    console.log( 'MOUSEOVER' );
-    //$(this).closest('#listitem #delete-div').show();
-    //$('.delete-div').show();
+    console.log( 'MOUSE ENTER' );
     $(this).children('.delete-div').show();
   })
+  // Hide 'Delete' div on mouseleave
   .on('mouseleave', '.listitem', function( event ) {
-    console.log( 'MOUSE OUT' );
-    //$(this).closest('#listitem #delete-div').show();
-    //$('.delete-div').hide();
+    console.log( 'MOUSE LEAVE' );
     $(this).children('.delete-div').hide();
   });
 
@@ -29,17 +27,11 @@ $(document).ready(function() {
     var text = input.value;
     if ($.trim(text).length > 0) {
       var newItem = $('<li class="listitem"><input type="checkbox">' + text + '<div class="delete-div"><span class="delete">Delete</span></div>');
-
-      if ($('#shopping-list li').length === 0) {
-
-        $('ul').append(newItem);
-      } else {
-        $('li:last').after(newItem);
-      }
-
+      $('ul').append(newItem);
     } else {
       alert('Please enter some text');
     }
+    input.value = '';
   });
 
 });
