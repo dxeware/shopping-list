@@ -10,6 +10,7 @@ $(document).ready(function() {
   $( '#shopping-list' ).on('mouseenter', '.listitem', function( event ) {
     //console.log( 'MOUSE ENTER' );
     $(this).children('.delete-div').show();
+    //$(this).addClass('text-strikethrough');
   })
   // Hide 'Delete' div on mouseleave
   .on( 'mouseleave', '.listitem', function( event ) {
@@ -32,6 +33,7 @@ $(document).ready(function() {
     input.value = '';
   });
 
+  // Bring input in focus on mouseenter, blue on mouseout
   $( '#item' ).on( 'mouseenter', function( event ) {
     //console.log( 'MOUSE ENTER INPUT' );
     $(this).focus();
@@ -39,6 +41,17 @@ $(document).ready(function() {
   .on( 'mouseout', function( event ) {
     //console.log( 'MOUSE OUT INPUT' );
     $(this).blur();
+  });
+
+  // Handle line-through when checkbox CHECKED or NOT
+  $( '#shopping-list' ).on('click', '.listitem', function( event ) {
+    if ($(this).children('input').is(':checked')) {
+      console.log('Check box checked');
+      $(this).closest('li').css('text-decoration', 'line-through');
+    } else {
+      console.log('Check box UNchecked');
+      $(this).closest('li').css('text-decoration', 'none');
+    }
   });
 
 });

@@ -18,6 +18,10 @@ body {
   color: white;
 }
 
+.text-through {
+  text-decoration: line-through;
+}
+
 .input {
   margin: auto;
   text-align: center;
