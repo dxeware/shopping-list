@@ -18,6 +18,15 @@ body {
   color: white;
 }
 
+.input {
+  margin: auto;
+  text-align: center;
+  margin-top: 0.5em;
+  font-size: 1em;
+  color: white;
+  margin-bottom: 0.5em;
+}
+
 .shopping-list {
   padding: 0;
   width: 60%;
@@ -39,6 +48,19 @@ body {
 
 .shopping-list li:checked {
   text-decoration: strikethrough;
+}
+
+.shopping-list li > div {
+  display: inline-block;
+  //padding: 0 12.5em 0 0;
+}
+
+.delete {
+  float: right;
+  margin-right: 0.5em;
+  background-color: red;
+  cursor: pointer;
+  display: none;
 }
 
 @media only screen and (max-width: 500px) {
