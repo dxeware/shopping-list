@@ -17,10 +17,16 @@ $(document).ready(function() {
   //$('ul').click( function() {
   //  alert('ul clicked');
   //});
+  //$( '#delete' ).hide();
+
   $( '#shopping-list' ).on('click', 'li', function( event ) {
     console.log( 'clicked', $( this ).text() );
   });
-  $ ( '#delete' ).on('click', function( event ) {
+  $ ( '#shopping-list' ).on('mouseover', '#delete', function( event ) {
+    console.log( 'mouseover DELETE' );
+    $(this).show();
+  });
+  $ ( '#shopping-list' ).on('click', '#delete', function( event ) {
     console.log( 'clicked DELETE' );
     $(this).closest('#listitem').remove();
   });
