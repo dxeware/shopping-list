@@ -53,21 +53,22 @@ button, input {
   text-decoration: strikethrough;
 }
 
-.shopping-list #delete {
+.shopping-list .delete {
   display: inline-block;
 }
 
-#delete {
+.delete {
   float: right;
   margin-right: 0.5em;
   background-color: red;
   cursor: pointer;
 }
 
-#delete-div {
+.delete-div {
   margin-top: -0.5em;
   width: 6em;
   float: right;
+  display: none;
 }
 
 @media only screen and (max-width: 500px) {
