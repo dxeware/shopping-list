@@ -22,9 +22,13 @@ body {
   margin: auto;
   text-align: center;
   margin-top: 0.5em;
-  font-size: 1em;
+  font-size: 1.5em;
   color: white;
   margin-bottom: 0.5em;
+}
+
+button, input {
+  font-size: 0.75em;
 }
 
 .shopping-list {
@@ -32,7 +36,6 @@ body {
   width: 60%;
   margin: auto;
   background-color: #F0E68C;
-  border: 1px solid black;
   font-size: 1.25em;
 }
 
@@ -43,21 +46,15 @@ body {
   text-align: bottom;
   padding-top: 1em;
   padding-left: 0.5em;
-  border-bottom: 1px solid navy;
+  border-bottom: 2px solid black;
 }
 
 .shopping-list li:checked {
   text-decoration: strikethrough;
 }
 
-/*.shopping-list li > div {
-  display: inline-block;
-  //padding: 0 12.5em 0 0;
-}*/
-
 .shopping-list #delete {
   display: inline-block;
-  //padding: 0 12.5em 0 0;
 }
 
 #delete {
@@ -65,7 +62,12 @@ body {
   margin-right: 0.5em;
   background-color: red;
   cursor: pointer;
-  display: none;
+}
+
+#delete-div {
+  margin-top: -0.5em;
+  width: 6em;
+  float: right;
 }
 
 @media only screen and (max-width: 500px) {

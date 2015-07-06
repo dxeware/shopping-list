@@ -1,48 +1,30 @@
 $(document).ready(function() {
-  //$('ul').on('mouseenter', 'li', function(event){
-  // fires when any LIs are clicked on
-  // including LIs that aren't on the page when it is initially loaded
-  //alert('an li was clicked');
-  //alert('working');
-  //$(this).descendants('.delete').show();
-  //$('ul').on('click', function(event) {
-  //var ul = document.getElementsByClassName('shopping-list')[0];
-  //ul.onclick = function(event) {
-  //  var target = getEventTarget(event);
-  //  alert(target.innerHTML);
-    //alert('an li was clicked');
-  //alert('working');
-  //$(this).descendants('.delete').show();
-  //};
-  //$('ul').click( function() {
-  //  alert('ul clicked');
-  //});
-  //$( '#delete' ).hide();
 
-  $( '#shopping-list' ).on('click', 'li', function( event ) {
-    console.log( 'clicked', $( this ).text() );
-  });
-  $ ( '#shopping-list' ).on('mouseover', '#delete', function( event ) {
-    console.log( 'mouseover DELETE' );
-    $(this).show();
-  });
+  // Remove list item if 'Delete' is clicked
   $ ( '#shopping-list' ).on('click', '#delete', function( event ) {
-    console.log( 'clicked DELETE' );
+    //console.log( 'clicked DELETE' );
     $(this).closest('#listitem').remove();
   });
+
+  // Add item to list if the 'Submit' button is pressed
+  // 1) use after() if list not EMPTY
+  // 2) use append() if list EMPTY
   $('button').click( function() {
     var input = document.getElementById("item");
     var text = input.value;
     if ($.trim(text).length > 0) {
-      var newItem = $('<li id="listitem"><input type="checkbox">' + text + '<div id="delete">Delete</div></li>');
+      var newItem = $('<li id="listitem"><input type="checkbox">' + text + '<div id="delete-div"><span id="delete">Delete</span></div>');
+
       if ($('#shopping-list li').length === 0) {
 
         $('ul').append(newItem);
       } else {
         $('li:last').after(newItem);
       }
+
     } else {
       alert('Please enter some text');
     }
   });
+
 });
