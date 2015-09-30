@@ -33,6 +33,13 @@ $(document).ready(function() {
     input.value = '';
   });
 
+  // Allow user to hit enter key, as well as submit button
+  $("#item").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#add").click();
+    }
+  });
+
   // Bring input in focus on mouseenter, blue on mouseout
   $( '#item' ).on( 'mouseenter', function( event ) {
     //console.log( 'MOUSE ENTER INPUT' );
